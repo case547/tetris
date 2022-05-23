@@ -11,42 +11,34 @@ public:
 #endif // _PIECES_
 
 int Pieces::BlockType(int pPiece, int pRotation, int pX, int pY) {
-/*  Return the type of a block (0 = none, 1 = normal, 2 = pivot)
+/*  Return the type of a block (0 = none, 1 = normal, 2 = pivot).
      
     Arguments:
-    >> pPiece: Piece to draw
-    >> pRotation: 1 of the 4 rotations
-    >> pX: Horizontal position
-    >> pY: Vertical position
+    - pPiece: Piece to draw
+    - pRotation: 1 of the 4 rotations
+    - pX: Horizontal position
+    - pY: Vertical position
 */
   return mPieces[pPiece][pRotation][pX][pY];
 }
 
 
 int Pieces::InitPosX(int pPiece, int pRotation) {
-/*  Returns horizontal displacement of the piece that has to be applied in order to create it in the
-correct position.
+/*  Return the horizontal displacement needed to create a piece in its correct position.
 
-Parameters:
-
->> pPiece: Piece to draw
->> pRotation: 1 of the 4 possible rotations
+    Arguments:
+    - pPiece: Piece to draw
+    - pRotation: 1 of the 4 possible rotations
 */
-  return mPiecesInitialPosition [pPiece][pRotation][0];
+  return mInitPos [pPiece][pRotation][0];
 }
 
-/*
-======================================
-Returns the vertical displacement of the piece that has to be applied in order to create it in the
-correct position.
+int Pieces::InitPosY (int pPiece, int pRotation) {
+/*  Return the vertical displacement needed to create a piece in its correct position.
 
-Parameters:
-
->> pPiece: Piece to draw
->> pRotation: 1 of the 4 possible rotations
-======================================
+    Arguments:
+    - pPiece: Piece to draw
+    - pRotation: 1 of the 4 possible rotations
 */
-int Pieces::GetYInitialPosition (int pPiece, int pRotation)
-{
-return mPiecesInitialPosition [pPiece][pRotation][1];
+  return mInitPos [pPiece][pRotation][1];
 }

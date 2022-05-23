@@ -1,4 +1,6 @@
-#include <iostream>
+#include <iostream> // include ("import") declarations for I/O stream library
+
+using namespace std; // make names from std visible without std::
 
 int main() {
   std::cout << "Hello World!\n";
@@ -238,8 +240,8 @@ char mPieces [7 /* type */ ][4 /* orientation */ ][5 /* rows */ ][5 /* cols */ ]
 
 // Each piece needs to be correctly positioned each time it is created. Each of these translations will be stored in the below array.
 
-// Piece displacement to creation position
-int mInitPos [7 /*kind */ ][4 /* r2otation */ ][2 /* position */] =
+// Piece translation to creation position
+int mInitPos [7 /*type */ ][4 /* orientation */ ][2 /* translation */] =
 {
   // O
   {
